@@ -1,0 +1,65 @@
+  .wrapper {
+     background-image: linear-gradient(to right top, #2d0036, #4f015b, #730283, #9a02ac, #C400D7);
+     padding: 5px 0;
+  }
+  .tp-wrapper {
+    -webkit-perspective: 800px;
+            perspective: 800px;
+  }
+
+    .tp-box {
+      position: relative;
+      width: 350px;
+      height: 350px;
+      margin: 5px auto;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transform         : transform 1s;
+          -ms-transform         : transform 1s;
+              transform         : transform 1s;
+    }
+
+    .tp-box__side {
+      width: 100%;
+      height: 95%;
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      color: #fff;
+      text-align: center;
+      /*line-height: 100px;*/
+      padding: 10px;
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+    }
+
+    .tp-box__front {
+      width: 95%;
+      height: 95%;
+      border-radius: 25px;
+      background-color: #231E39;
+      -webkit-transform : rotateY(0deg);
+      -ms-transform     : rotateY(0deg);
+      transform         : rotateY(0deg);
+    }
+
+    .tp-box__back {
+      width: 95%;
+      height: 95%;
+      border-radius: 25px;
+      background-color: #231E39;
+      -webkit-transform : rotateY(-180deg);
+      -ms-transform     : rotateY(-180deg);
+      transform         : rotateY(-180deg);
+    }
+
+.example-card {
+ border-radius: 25px;
+ height: 300px;
+ max-height: 350px;
+}

@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+html, body {
+/* background-image: linear-gradient(to right top, #2d0036, #4f015b, #730283, #9a02ac, #C400D7);*/
+  height: 100%;
+}
 body {
-  font-family: Roboto, Arial, sans-serif;
+ font-family: Montserrat, sans-serif;
+  margin: auto;
   margin: 0;
 }
 
@@ -15,5 +20,3 @@ body {
   float: right;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

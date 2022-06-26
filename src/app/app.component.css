@@ -1,3 +1,10 @@
+@media only screen and (max-width: 600px) {
+.wrapper{
+    width: 100%;
+    margin-left: auto;
+    margin-right:auto;
+  }
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -26,20 +33,89 @@
 }
 
 .sidenav {
-  width: 200px;
-  height: fit-content;
+  width: 150px;
 }
 
 .container {
-  height: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .box {
-  display: flex;
   flex: 1;
+  display: flex;
+  height: 500vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: rgb(95, 21, 192) !important;
+}
+
+.scrollbar {
+  background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .26);
+}
+
+#style-1::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: #F5F5F5;
+}
+
+}
+
+
+@media only screen and (min-width: 768px) {
+  .wrapper{
+   background: linear-gradient(to right top, #2d0036, #4f015b, #730283, #9a02ac, #C400D7);
+    width: 50%;
+    margin-left: auto;
+    margin-right:auto
+  }
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.example-container {
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+.long-content {
+  border: 1px solid green ;
+  height: 1000px;
+  background-color: lightblue;
+}
+
+.sidenav {
+  width: 150px;
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  height: 500vh;
   flex-direction: column;
   justify-content: flex-start;
   background-color: #ddd0d0;
@@ -59,3 +135,5 @@
   height: 4px;
   background-color: #F5F5F5;
 }
+}
+

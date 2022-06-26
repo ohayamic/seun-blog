@@ -1,18 +1,15 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
 
 export interface Section {
   name: string;
-  updated: Date;
+  icon: string;
+  link: string;
 }
 
 @Component({
@@ -21,25 +18,32 @@ export interface Section {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-];
 
-    folders: Section[] = [
+  folders: Section[] = [
     {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
+      name: 'Home',
+      icon: 'home',
+      link: '/',
     },
     {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
+      name: 'Profile',
+      icon: 'account_circle',
+      link: '/profile',
     },
     {
-      name: 'Work',
-      updated: new Date('1/28/16'),
+      name: 'Interest',
+      icon: 'interests',
+      link:  "/interest",
+    },
+    {
+      name: 'Projects',
+      icon: 'code',
+      link:  "/projects",
+     },
+    {
+      name: 'Clients',
+      icon: 'groups',
+      link:  "/clients",
     },
   ];
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)

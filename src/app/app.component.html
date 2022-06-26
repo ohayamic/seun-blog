@@ -1,3 +1,4 @@
+<div class="wrapper">
   <mat-sidenav-container>
       <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
                 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -7,28 +8,30 @@
                 [fixedBottomGap]="0"
                 >
     <div class="container">
-      <div class="box">
+      <div class="box" style="background-color:rgb(115, 49, 200)">
         <div class="scrollbar" id="style-1">
-          <div class="force-overflow">
-            <div class="">
+          <div class="force-overflow" style="background-color: rgb(115, 49, 200)">
             <mat-nav-list>
             <mat-list>
-              <div mat-subheader>Favorite</div>
+              <div mat-subheader >
+                <h2 style="color:white">Favorite</h2>
+              </div>
               <mat-list-item *ngFor="let folder of folders">
-                <mat-icon mat-list-icon>folder</mat-icon>
-                <div mat-line>{{folder.name}}</div>
+                <mat-icon style="color:white" mat-list-icon>{{folder.icon}}</mat-icon>
+                <div mat-line>
+                  <a style="color:white" routerLink={{folder.link}}>{{folder.name}}</a>
+                </div>
               </mat-list-item>
             </mat-list>
             </mat-nav-list>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
   </mat-sidenav>
     <mat-sidenav-content>
-      <mat-toolbar color="primary">
+      <!-- Header-->
+      <mat-toolbar color="primary" style="position:sticky">
         <button
           mat-icon-button
           type="button"
@@ -48,35 +51,28 @@
           <mat-icon>share</mat-icon>
         </button>
       </mat-toolbar>
-
-    <mat-grid-list cols="4" rowHeight="100px">
-      <mat-grid-tile
-          *ngFor="let tile of tiles"
-          [colspan]="tile.cols"
-          [rowspan]="tile.rows"
-          [style.background]="tile.color">
-        {{tile.text}}
-      </mat-grid-tile>
-    </mat-grid-list>
-  </mat-sidenav-content>
-  </mat-sidenav-container>
+      <!-- Body-->
+    <!-- Single page Component-->
+      <router-outlet></router-outlet>
+  <!-- Footer-->
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>Second Line</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon></mat-icon>
-      </button>
+      <span>Second End</span>
     </mat-toolbar-row>
-    <mat-toolbar-row>
-      <span></span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon></mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon></mat-icon>
-      </button>
+    <mat-toolbar-row style=" margin-left: auto; margin-right: auto;">
+      <div style="width: 50%; margin-left: auto; margin-right: auto; text-align:center;">
+        <a href = 'https://www.instagram.com/accounts/login/?next=/oluwaseun_bayode/' style="color:white">
+          <fa-icon [icon]="['fab', 'facebook']" size="2x" style="margin-right: 10px;"></fa-icon>
+        </a>
+        <fa-icon [icon]="['fab', 'github']" size="2x"></fa-icon>
+        <a href="https://www.facebook.com/bayode.seun.1/" style="color:white">
+          <fa-icon [icon]="['fab', 'instagram']" size="2x" style="margin-left: 10px;"> </fa-icon>
+        </a>
+      </div>
     </mat-toolbar-row>
   </mat-toolbar>
-<router-outlet></router-outlet>
+  </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
